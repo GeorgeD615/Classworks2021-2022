@@ -1,7 +1,7 @@
 ﻿#include <iostream>
 
 
-void IntegralSearh(int a[][4], int r, int c) {
+/*void IntegralSearh(int* a[][], int r, int c) {
     for (int i = 0; i < r; ++i) {
         for (int j = 0; j < c; ++j) {
             a[i][j] = rand() % 10;
@@ -49,7 +49,22 @@ void IntegralSearh(int a[][4], int r, int c) {
                     }
                 }
             }
+
         }
+    }
+}*/
+void printarr(int* a[][], int r, int c){
+    int k = 0;
+    for (int i = 0; i < r; ++i) {
+        for (int j = 0; j < r; ++j) {
+            a[j + c * i] = ++k;
+        }
+    }
+    for (int i = 0; i < r; ++i) {
+        for (int j = 0; j < r; ++j) {
+            std::cout << a[j + c * i] << " ";
+        }
+        std::cout << std::endl;
     }
 }
 
@@ -58,7 +73,9 @@ int main()
 {
     const int r = 4, c = 4;
     int arr[r][c];
-    IntegralSearh(arr, r, c);
+    printarr(&arr[0][0], r, c);
+    //IntegralSearh(&arr[0][0], r, c);
+    
 }
 
 
