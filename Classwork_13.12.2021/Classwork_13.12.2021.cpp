@@ -90,6 +90,4 @@ int main(int argc, char *argv[])
     std::string name2 = argv[2]; // большая картинка
 
     insertPicture(name1, name2);
-
-
 }
